@@ -7,7 +7,7 @@ FROM python:3.9.9
 USER root
 
 # Set working directory
-WORKDIR /pipeline
+WORKDIR /lincoln_test_technique
 
 # Copy files to the image
 COPY --from=builder /app/server ./
@@ -15,6 +15,6 @@ COPY script.sh ./
 COPY pipeline ./pipeline
 
 # Install librairies
-RUN pip install -r /pipeline/requirements.txt
+RUN pip install -r /lincoln_test_technique/pipeline/requirements.txt
 
 ENTRYPOINT "./server"
