@@ -14,3 +14,4 @@ Bucket dans GCS :
 - BQ : 1_raw :  copie de la landing vers la raw des fichiers valides + données de data quality
 - BQ : 2_trusted : nettoyage et enrichissement de la couche raw
 - BQ : 3_refined : pour les use case
+
