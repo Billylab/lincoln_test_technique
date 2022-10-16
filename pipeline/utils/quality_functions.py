@@ -106,8 +106,8 @@ def check_files(pipeline_name:str, dataset_name: str, table_name:str, blob:str, 
             error_file = True
             description = 'Error when reading the Excel file'
     if file_format == 'json':
-        json_content = blob.download_as_bytes()
-        df = pd.read_json(json_content)
+        json_content = blob.download_as_string()
+        df = pd.read_json(path_or_buf=json_content)
         print(f"Error when reading the JSON file :'{blob.name}'")
 
     if error_file == False:
