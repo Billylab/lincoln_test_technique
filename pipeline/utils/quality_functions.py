@@ -107,12 +107,8 @@ def check_files(pipeline_name:str, dataset_name: str, table_name:str, blob:str, 
             description = 'Error when reading the Excel file'
     if file_format == 'json':
         json_content = blob.download_as_bytes()
-        try:
-            df = pd.read_json(json_content)
-        except: 
-            print(f"Error when reading the JSON file :'{blob.name}'")
-            error_file = True
-            description = 'Error when reading the JSON file'
+        df = pd.read_json(json_content)
+        print(f"Error when reading the JSON file :'{blob.name}'")
 
     if error_file == False:
         print("df.columns.tolist()", df.columns.tolist())
